@@ -1,0 +1,18 @@
+{
+  "dependencies": {
+    "express": "^4.17.1",
+    "node-libpng": "^0.2.20",
+    "yarn": "^1.22.15"
+  },
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "name": "twitbait",
+  "version": "1.0.0",
+  "description": "A Twitter meta-img generator",
+  "main": "index.js",
+  "repository": "https://github.com/AlgorithmEnigma/twitbait-serverless",
+  "author": "Jordan Lowell",
+  "license": "GPL-3.0-or-later",
+  "private": false
+}
