@@ -1,7 +1,10 @@
 {
   "dependencies": {
+    "canvas": "^2.8.0",
     "express": "^4.17.1",
     "node-libpng": "^0.2.20",
+    "tinycolor2": "^1.4.2",
+    "tinygradient": "^1.1.5",
     "yarn": "^1.22.15"
   },
   "scripts": {
