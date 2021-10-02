@@ -1,4 +1,4 @@
-function wrapText(ctx, text, wordsPerLine = 4) {
+function wrapText(text, wordsPerLine = 4) {
     let line = "";
     let wrappedText = [];
     let words = text.split(" ");
