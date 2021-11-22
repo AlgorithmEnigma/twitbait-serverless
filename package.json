@@ -1,24 +1,34 @@
 {
-  "dependencies": {
-    "axios": "^0.22.0",
-    "canvas": "^2.8.0",
-    "cheerio": "^1.0.0-rc.10",
-    "express": "^4.17.1",
-    "node-libpng": "^0.2.20",
-    "puppeteer": "^10.4.0",
-    "tinycolor2": "^1.4.2",
-    "tinygradient": "^1.1.5",
-    "yarn": "^1.22.15"
-  },
-  "scripts": {
-    "start": "node src/index.js"
-  },
-  "name": "twitbait",
-  "version": "1.0.0",
-  "description": "A Twitter meta-img generator",
-  "main": "index.js",
-  "repository": "https://github.com/AlgorithmEnigma/twitbait-serverless",
-  "author": "Jordan Lowell",
-  "license": "GPL-3.0-or-later",
-  "private": false
+    "dependencies": {
+        "axios": "^0.22.0",
+        "canvas": "^2.8.0",
+        "cheerio": "^1.0.0-rc.10",
+        "express": "^4.17.1",
+        "puppeteer": "^10.4.0",
+        "tinycolor2": "^1.4.2",
+        "tinygradient": "^1.1.5",
+        "yarn": "^1.22.15"
+    },
+    "scripts": {
+        "start": "tsc && node dist/index.js",
+        "lint": "eslint --ext .js, .ts .",
+        "format": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\""
+    },
+    "name": "twitbait",
+    "version": "1.0.0",
+    "description": "A Twitter meta-img generator",
+    "main": "index.js",
+    "repository": "https://github.com/AlgorithmEnigma/twitbait-serverless",
+    "author": "Jordan Lowell",
+    "license": "GPL-3.0-or-later",
+    "private": false,
+    "devDependencies": {
+        "@typescript-eslint/eslint-plugin": "^5.4.0",
+        "@typescript-eslint/parser": "^5.4.0",
+        "eslint": "^8.3.0",
+        "eslint-config-google": "^0.14.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-react": "^7.27.1",
+        "prettier": "^2.4.1"
+    }
 }
