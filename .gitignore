@@ -68,6 +68,10 @@ typings/
 # Yarn Integrity file
 .yarn-integrity
 
+# Yarn Lock file
+yarn.lock
+
+
 # dotenv environment variables file
 .env
 .env.test
@@ -102,3 +106,5 @@ dist
 
 # TernJS port file
 .tern-port
+
+old_src
