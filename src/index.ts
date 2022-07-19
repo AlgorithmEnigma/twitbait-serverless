@@ -1,38 +1,24 @@
-const express = require('express');
-const { createCanvas } = require('canvas');
+import tinygradient from 'tinygradient';
+import fs from 'fs';
 
-// Load util functions
-// const createRGBGradient = require('./utils/gradient.ts');
+let gradient = tinygradient('pink', 'green', 'blue');
+// console.log(gradient);
+let colorsRgb = gradient.rgb(12);
+// console.log(colorsRgb);
+gradient = tinygradient(colorsRgb);
+let gradientCSS = gradient.css();
+console.log(gradientCSS);
 
-// Load config
-const config = require('../config.json');
+function changeGradient(gradient: string) {
+    let index = `body {
+        background: rgb(2, 0, 45);
+        background: ${gradient}
+    }`;
 
-const app = express();
+    fs.writeFile('src/index.css', index, 'utf-8', function (err) {
+        if (err) throw err;
+        console.log('css made');
+    });
+}
 
-// Destructure config variables
-const {
-    port,
-    height,
-    width,
-    colors,
-}: { port: number; height: number; width: number; colors: string[] } = config;
-
-// Create canvas and get context
-let canvas = createCanvas(width, height);
-const ctx = canvas.getContext('2d'); // const canvas = createCanvas(width, height);
-// const ctx = canvas.getContext('2d');
-
-// const gradient = createRGBGradient;
-
-// Get request
-app.get('/', (req: any, res: any) => {
-    // if (ctx !== undefined && ctx !== null) {
-    ctx.fillStyle = '#FF0000';
-    ctx.fillRect(0, 0, width, height);
-
-    res.send(`<img src="${canvas.toDataURL()}" />`);
-});
-// Listen
-app.listen(port, () => {
-    console.log(`App listening at http://localhost:${port}`);
-});
+changeGradient(gradientCSS);
